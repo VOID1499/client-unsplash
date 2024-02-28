@@ -1,0 +1,19 @@
+<div class="container mx-auto flex flex-wrap justify-center">
+  @for(image of data.results;track image.id){
+
+  <div class="flex flex-wrap w-96 h-96">
+    <img
+      class="object-cover"
+      [ngSrc]="image.urls.small"
+      width="1300"
+      height="1300"
+      priority=""
+      alt=""
+    />
+
+    <button>Descargar</button>
+
+  </div>
+
+  }
+</div>

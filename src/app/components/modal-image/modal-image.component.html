@@ -1,0 +1,23 @@
+
+<div #modalMask class="modal-image-mask borde-5 p-0 m-0 row overflow-scroll " [hidden]="hidden" >
+    <div class="modal-image col-sm-12 col-md-6 col-lg-6 p-1 bg-dark  justify-content-center "  >
+       
+        <div class="container d-flex flex-row justify-content-end gap-2 p-2" >
+            <button (click)="cerrarModal()" class="btn btn-sm btn-secondary me-auto" >Cerrrar</button>
+              <div *ngIf="imageData" class=" btn-group dropdown-center">
+                  <a [href]="imageData.links.download+'&force=true' " download="" target="_blank" class="btn btn-sm btn-secondary">Original {{imageData.width}} x {{imageData.height}}  </a>
+                  <button type="button" class="btn btn-secondary btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden"></span>
+                  </button>
+                  <div class="dropdown-menu ">
+                    <a *ngIf="imageData.resoluciones.s != '' "  class="dropdown-item" download target="_blank" [href]=" imageData.links.download+'&force=true&w=640' " > Pequeño {{imageData.resoluciones.s}}</a>
+                    <a  *ngIf="imageData.resoluciones.m != '' "  class="dropdown-item" download target="_blank"  [href]=" imageData.links.download+'&force=true&w=1920' " >Mediano {{imageData.resoluciones.m}} </a>
+                    <a  *ngIf="imageData.resoluciones.l != '' "  class="dropdown-item" download target="_blank"  [href]=" imageData.links.download+'&force=true&w=2400' " >Grande {{imageData.resoluciones.l}} </a>
+                  </div>
+              </div>
+          </div>
+
+        <img *ngIf="imageData" class="img-fluid" [src]="imageData.urls.full"  alt=""> 
+   
+    </div>
+</div>

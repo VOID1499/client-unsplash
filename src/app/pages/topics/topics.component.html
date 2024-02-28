@@ -1,0 +1,14 @@
+
+<section class="flex flex-wrap justify-evenly  container mx-auto mt-20  gap-5">
+   
+    @for(item of topics;track item.id){
+
+        <app-topic-collection [topic]="item" ></app-topic-collection>
+
+    }@empty {
+
+    }
+
+</section>
+
+

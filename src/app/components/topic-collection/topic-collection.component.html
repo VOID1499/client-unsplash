@@ -1,0 +1,17 @@
+
+
+
+<div class="relative flex container flex w-72 h-72 " >
+
+    <span class="font-normal text-gray-500 absolute z-10 w-full h-1/12  bottom-0 bg-white " >
+        {{topic.title}}
+    </span>
+    
+    @for (photo of topic.preview_photos; track photo.id) {
+        <div  class="relative z-0 resize-container " [ngClass]="{'active':true}">
+            <img class="relative object-cover" [ngSrc]="photo.urls.small" fill="" priority="" alt="{{photo.slug}}">
+            
+        </div>
+    }
+
+</div>
